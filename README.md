@@ -9,7 +9,7 @@ Edit file **pg_hba.conf**
 ```bash
 # TYPE    DATABASE        USER            ADDRESS                        METHOD
 # IPv4 local connections:
-hostssl   powdb      powerbi_usr    192.168.0.10/32               trust clientcert=1
+hostssl   powdb      powerbi_sync    192.168.0.10/32               trust clientcert=1
 ```
 
 Edit file **postgresql.conf**
@@ -83,7 +83,7 @@ Next go to the PowerBI site https://app.powerbi.com/
 
 Add new Gateway then apply and Test all connections
 
-![image](https://user-images.githubusercontent.com/62062799/120436803-10d07e80-c388-11eb-96e2-b441d490e3b9.png)
+![image](https://user-images.githubusercontent.com/62062799/120438579-3a8aa500-c38a-11eb-9873-29046ffeb649.png)
 
 All done
 
