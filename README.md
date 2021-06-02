@@ -73,7 +73,7 @@ Put certificate files to directory  C:\Users\user\AppData\Roaming\postgresql
 
 Start - Control pannel - Administrative tools - ODBC Data Sources (64-bit) - Add - Test
 
-![image](https://user-images.githubusercontent.com/62062799/120436671-dff04980-c387-11eb-8571-0475b2f11933.png)
+![image](https://user-images.githubusercontent.com/62062799/120437678-0c589580-c389-11eb-8bcf-734ab21b7fc8.png)
 
 ![image](https://user-images.githubusercontent.com/62062799/120436689-e8488480-c387-11eb-97ba-f3e41488d18d.png)
 
