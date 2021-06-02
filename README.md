@@ -46,3 +46,47 @@ openssl x509 -req -days 750 -CAcreateserial -in client.csr -CA root.crt -CAkey s
 rm -f client.csr
 ```
 
+Next we need copy crtificate to the config directory
+```bash
+rm -f /etc/ssl/postgresql/*
+cp root.crt /etc/ssl/postgresql/root.crt
+cp client.crt /etc/ssl/postgresql/postgresql.crt
+cp client.key /etc/ssl/postgresql/postgresql.key
+chmod -R 700 /etc/ssl/postgresql
+chown -R postgres.postgres /etc/ssl/postgresql
+systemctl restart postgresql-11
+```
+
+And the last we need copy cert files to the server with PowerBI 
+```
+scp /etc/ssl/postgresql/postgresql.crt /etc/ssl/postgresql/postgresql.key root.crt   user@powerBI.mycompeny.local:/home
+```
+
+Connect over RDP to the Windows Server and copy cert files to postgresql directory and create test ODBC connector
+```cmd
+Put certificate files to directory  C:\Windows\ServiceProfiles\PBIEgwService\AppData\Roaming\postgresql
+Put certificate files to directory  C:\Users\user\AppData\Roaming\postgresql
+```
+
+![image](https://user-images.githubusercontent.com/62062799/120436610-ce0ea680-c387-11eb-96df-363fdfdac6c9.png)
+
+
+Start - Control pannel - Administrative tools - ODBC Data Sources (64-bit) - Add - Test
+
+![image](https://user-images.githubusercontent.com/62062799/120436671-dff04980-c387-11eb-8571-0475b2f11933.png)
+
+![image](https://user-images.githubusercontent.com/62062799/120436689-e8488480-c387-11eb-97ba-f3e41488d18d.png)
+
+Next go to the PowerBI site https://app.powerbi.com/
+
+![image](https://user-images.githubusercontent.com/62062799/120436758-031af900-c388-11eb-9b10-854470121aa7.png)
+
+Add new Gateway then apply and Test all connections
+
+![image](https://user-images.githubusercontent.com/62062799/120436803-10d07e80-c388-11eb-96e2-b441d490e3b9.png)
+
+All done
+
+
+
+
