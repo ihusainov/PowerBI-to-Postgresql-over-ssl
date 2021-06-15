@@ -83,6 +83,10 @@ Next go to the PowerBI site https://app.powerbi.com/
 
 Add new Gateway then apply and Test all connections
 
+```bash
+database=jira_db;driver={PostgreSQL Unicode(x64)};port=5432;server=postgre-serv.local;sslmode=verify-full
+```
+
 ![image](https://user-images.githubusercontent.com/62062799/120438579-3a8aa500-c38a-11eb-9873-29046ffeb649.png)
 
 All done
